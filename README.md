@@ -17,6 +17,28 @@ You'll work alone, and you'll also review your own code so you can practice refl
 * Account statement (date, amount, balance) printing.
 * Data can be kept in memory (it doesn't need to be stored to a database or anything).
 
+
+### User stories
+
+```
+As a client,
+So I can add money to my account,
+I can make deposits into my account.
+```
+
+```
+As a client,
+So I can take money out of my account,
+I can make withdrawals from my account.
+```
+
+```
+As a client,
+So I can analyse my account,
+I can see an account statement which prints the date, amount and current balance of my transactions.
+```
+
+
 ### Acceptance criteria
 
 **Given** a client makes a deposit of 1000 on 10-01-2012  
