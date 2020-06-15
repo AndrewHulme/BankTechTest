@@ -38,6 +38,25 @@ So I can analyse my account,
 I can see an account statement which prints the date, amount and current balance of my transactions.
 ```
 
+## Models
+
+| class | methods | variables |
+| --- | --- | |
+| Account | .deposit(amount) | this.transactions = [[date, type, amount]] |
+| | .withdraw(amount) | |
+| | .seeStatement() | |
+
+Example of this would work:
+
+### In REPL:
+andrew = new Account()
+andrew.deposit(400)
+andrew.withdraw(50)
+andrew.seeStatement()
+
+### Instance variable:
+this.transactions = [[10/01/2012, credit, 1000], [13/01/2012, credit, 2000], [14/01/2012, debit, 500]]
+
 
 ### Acceptance criteria
 
