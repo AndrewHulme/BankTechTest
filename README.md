@@ -62,12 +62,13 @@ date || credit || debit || balance
 | | .withdraw(amount) | |
 | | .seeStatement() | |
 
-Example of this would work:
+Example of how this would work:
 
 #### In REPL:
 andrew = new Account()\
-andrew.deposit(400)\
-andrew.withdraw(50)\
+andrew.deposit(1000)\
+andrew.deposit(2000)\
+andrew.withdraw(500)\
 andrew.seeStatement()
 
 #### Instance variable:
