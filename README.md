@@ -75,6 +75,18 @@ andrew.seeStatement()
 this.transactions = [[10/01/2012, credit, 1000], [13/01/2012, credit, 2000], [14/01/2012, debit, 500]]
 
 
+## Input/Output Table
+
+Before: `account = new Account`
+
+| Input | Function | Output |
+| --- | --- | --- |
+| | account.seeStatement()| date \|\| credit \|\| debit \|\| balance |
+| account.deposit(50) | account.seeStatement()| date \|\| credit \|\| debit \|\| balance <br/> 15/06/2020 \|\| 50.00 \|\| \|\| 50.00|
+| account.deposit(50) <br/> account.deposit(50) | account.seeStatement()| date \|\| credit \|\| debit \|\| balance <br/> 15/06/2020 \|\| 50.00 \|\| \|\| 100.00 <br/> 15/06/2020 \|\| 50.00 \|\| \|\| 50.00|
+| account.deposit(50) <br/> account.deposit(100) | account.seeStatement()| date \|\| credit \|\| debit \|\| balance <br/> 15/06/2020 \|\| 100.00 \|\| \|\| 150.00 <br/> 15/06/2020 \|\| 50.00 \|\| \|\| 50.00|
+| account.deposit(100) <br/> account.withdraw(50) | account.seeStatement()| date \|\| credit \|\| debit \|\| balance <br/> 15/06/2020 \|\|  \|\| 50.00 \|\| 50.00 <br/> 15/06/2020 \|\| 100.00 \|\| \|\| 100.00|
+
 
 ## Self-assessment
 
