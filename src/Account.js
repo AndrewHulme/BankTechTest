@@ -7,21 +7,33 @@ class Account {
   }
 
   seeStatement(){
+    var statementarray = [];
+
     if (this.transactions.length === 0){
       return 'date || credit || debit || balance'
     } else {
 
-      var transactiondate = this.transactions[0].date
-      var transactiontype = this.transactions[0].type
-      var transactionamount = this.transactions[0].amount
+      var runningtotal = 0
 
-      return `date || credit || debit || balance\n${transactiondate} || ${transactionamount}.00 || || ${transactionamount}.00`
+      this.transactions.forEach(function(transaction){
+        var transactiondate = transaction.date
+        var transactionamount = transaction.amount
+        runningtotal += transaction.amount
+
+        statementarray.push(`\n${transactiondate} || ${transactionamount}.00 || || ${runningtotal}.00`)
+      });
+
+      statementarray.push('date || credit || debit || balance')
+
+      return statementarray.reverse().toString().replace(/,/g, '')
     }
   }
 
   deposit(amount){
     this.transactions.push({date: this._checkCurrentDate(), type: "deposit", amount: amount})
   }
+
+
 
   _checkCurrentDate(){
     var today = new Date();
