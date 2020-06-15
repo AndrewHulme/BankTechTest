@@ -10,7 +10,12 @@ class Account {
     if (this.transactions.length === 0){
       return 'date || credit || debit || balance'
     } else {
-      return 'date || credit || debit || balance\n15/06/2020 || 50.00 || || 50.00'
+
+      var transactiondate = this.transactions[0].date
+      var transactiontype = this.transactions[0].type
+      var transactionamount = this.transactions[0].amount
+
+      return `date || credit || debit || balance\n${transactiondate} || ${transactionamount}.00 || || ${transactionamount}.00`
     }
   }
 
