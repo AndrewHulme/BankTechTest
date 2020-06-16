@@ -13,13 +13,17 @@ class Account {
     this.transactions.forEach(function(transaction){
       var transactionDate = transaction.date
       var transactionAmount = transaction.amount
-      runningTotal += transaction.amount
 
-      statementArray.push(`\n${transactionDate} || ${transactionAmount}.00 || || ${runningTotal}.00`)
+      if (transaction.type === "deposit"){
+        runningTotal += transaction.amount
+        statementArray.push(`\n${transactionDate} || ${transactionAmount}.00 || || ${runningTotal}.00`)
+      } else {
+        runningTotal -= transaction.amount
+        statementArray.push(`\n${transactionDate} || || ${transactionAmount}.00 || ${runningTotal}.00`)
+      }
     });
 
     statementArray.push('date || credit || debit || balance')
-
     return statementArray.reverse().toString().replace(/,/g, '')
   }
 
@@ -27,6 +31,9 @@ class Account {
     this.transactions.push({date: this._checkCurrentDate(), type: "deposit", amount: amount})
   }
 
+  withdraw(amount){
+    this.transactions.push({date: this._checkCurrentDate(), type: "withdrawal", amount: amount})
+  }
 
   _checkCurrentDate(){
     var today = new Date();
