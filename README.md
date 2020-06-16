@@ -72,7 +72,7 @@ andrew.withdraw(500)\
 andrew.seeStatement()
 
 #### Instance variable:
-this.transactions = [[10/01/2012, credit, 1000], [13/01/2012, credit, 2000], [14/01/2012, debit, 500]]
+this.transactions = [{date: 10/01/2012, type: credit, amount: 1000}, {date: 13/01/2012, type: credit, amount: 2000}, {date: 14/01/2012, type: debit, amount: 500}]
 
 
 ## Input/Output Table
