@@ -3,6 +3,9 @@
 ## Description
 A bank tech test which allows users to interact with their account through depositing money, withdrawing money and printing their bank statement.
 
+## Approach
+I have split the code into two classes: Account and Statement. The Account class is responsible for handling deposits, withdrawals and holding the transactions, whereas the Statement class is responsible for generating the statement.
+
 ## Technology used
 - Language: JavaScript
 - Testing Framework: Jasmine

@@ -20,6 +20,11 @@ class Statement {
     });
 
     statementArray.push('date || credit || debit || balance');
+
+    return this._formatStatement(statementArray)
+  }
+
+  _formatStatement(statementArray){
     return statementArray.reverse().toString().replace(/,/g, '');
   }
 
