@@ -9,7 +9,11 @@ describe('Account', function(){
   var yyyy;
 
   beforeEach(function(){
-    statementspy = jasmine.createSpyObj('statement',['createStatement']);
+    statementspy = jasmine.createSpyObj('statement',['createStatement', '_checkCurrentDate']);
+    statementspy._checkCurrentDate.and.callFake(function() {
+        return today
+    });
+
     account = new Account(statementspy);
 
     today = new Date();
