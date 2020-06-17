@@ -1,12 +1,24 @@
 # Bank tech test
 
-Today, you'll practice doing a tech test.
+## Description
+A bank tech test which allows users to interact with their account through depositing money, withdrawing money and printing their bank statement.
 
-For most tech tests, you'll essentially have unlimited time.  This practice session is about producing the best code you can when there is a minimal time pressure.
+## Technology used
+- Language: JavaScript
+- Testing Framework: Jasmine
 
-You'll get to practice your OO design and TDD skills.
+## How to run the project:
+Clone this repository from Github then open in your browser. Below is an example of how to run the code:
 
-You'll work alone, and you'll also review your own code so you can practice reflecting on and improving your own work.
+`$ var account = new Account()`
+`$ account.deposit(100)`
+`$ account.withdraw(50)`
+`$ account.seeStatement()`
+
+
+
+## How to run tests:
+Clone this repository from Github then open SpecRunner.html in your browser.
 
 ## Specification
 
@@ -18,7 +30,7 @@ You'll work alone, and you'll also review your own code so you can practice refl
 * Data can be kept in memory (it doesn't need to be stored to a database or anything).
 
 
-### User stories
+## User stories
 
 ```
 As a client,
@@ -38,7 +50,7 @@ So I can analyse my account,
 I can see an account statement which prints the date, amount and current balance of my transactions.
 ```
 
-### Acceptance criteria
+## Acceptance criteria
 
 **Given** a client makes a deposit of 1000 on 10-01-2012  
 **And** a deposit of 2000 on 13-01-2012  
@@ -58,21 +70,15 @@ date || credit || debit || balance
 
 | class | methods | variables |
 | --- | --- | --- |
-| Account | .deposit(amount) | this.transactions = [[date, type, amount]] |
+| Account | .deposit(amount) | this.transactions = [{date: date, type: type, amount: amount}] |
 | | .withdraw(amount) | |
 | | .seeStatement() | |
 
-Example of how this would work:
+| class | methods | variables |
+| --- | --- | --- |
+| Statement | .createStatement() |  |
 
-#### In REPL:
-andrew = new Account()\
-andrew.deposit(1000)\
-andrew.deposit(2000)\
-andrew.withdraw(500)\
-andrew.seeStatement()
 
-#### Instance variable:
-this.transactions = [{date: 10/01/2012, type: credit, amount: 1000}, {date: 13/01/2012, type: credit, amount: 2000}, {date: 14/01/2012, type: debit, amount: 500}]
 
 
 ## Input/Output Table

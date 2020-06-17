@@ -2,15 +2,11 @@
 
 class Statement {
 
-  constructor(transactions){
-    this.transactions = transactions;
-  }
-
-  createStatement(){
+  createStatement(transactions){
     var statementArray = [];
     var runningTotal = 0;
 
-    this.transactions.forEach(function(transaction){
+    transactions.forEach(function(transaction){
 
       if (transaction.type === "deposit"){
         runningTotal += transaction.amount;

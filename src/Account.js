@@ -2,14 +2,13 @@
 
 class Account {
 
-  constructor(statement_class = Statement){
+  constructor(statement_class = new Statement){
     this.transactions = [];
     this.statement_class = statement_class;
   }
 
   seeStatement(){
-    var statement = new this.statement_class(this.transactions)
-    return statement.createStatement()
+    return this.statement_class.createStatement(this.transactions)
   }
 
   deposit(amount){
