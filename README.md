@@ -18,6 +18,10 @@ Clone this repository from Github then open in your browser. Below is an example
 `$ account.withdraw(50)`
 `$ account.seeStatement()`
 
+An example of code running can be seen below:
+
+![REPLUsage](images/BankTestUsage.png)
+
 
 
 ## How to run tests:
