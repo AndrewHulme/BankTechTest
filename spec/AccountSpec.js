@@ -38,13 +38,6 @@ describe("Account", function () {
       ]);
     });
 
-    it("updates list of transactions when depositing £100 in the account", function () {
-      account.deposit(100.0);
-      expect(account.transactions).toEqual([
-        { date: today, type: "deposit", amount: 100.0 },
-      ]);
-    });
-
     it("updates list of transactions when depositing £50 twice in the account", function () {
       account.deposit(50.0);
       account.deposit(100.0);
